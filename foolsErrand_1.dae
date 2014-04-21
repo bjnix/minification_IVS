@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.70.0 commit date:2014-03-19, commit time:05:02, hash:19e627c</authoring_tool>
     </contributor>
-    <created>2014-04-14T16:46:42</created>
-    <modified>2014-04-14T16:46:42</modified>
+    <created>2014-04-14T16:54:31</created>
+    <modified>2014-04-14T16:54:31</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -80,10 +80,54 @@
       </extra>
     </light>
   </library_lights>
-  <library_images/>
+  <library_images>
+    <image id="texture17_jpg" name="texture17_jpg">
+      <init_from>texture17.jpg</init_from>
+    </image>
+    <image id="texture18_tif" name="texture18_tif">
+      <init_from>texture18.tif</init_from>
+    </image>
+    <image id="texture19_tif" name="texture19_tif">
+      <init_from>texture19.tif</init_from>
+    </image>
+    <image id="texture20_tif" name="texture20_tif">
+      <init_from>texture20.tif</init_from>
+    </image>
+    <image id="texture23_tif" name="texture23_tif">
+      <init_from>texture23.tif</init_from>
+    </image>
+    <image id="texture21_tif" name="texture21_tif">
+      <init_from>texture21.tif</init_from>
+    </image>
+    <image id="texture22_tif" name="texture22_tif">
+      <init_from>texture22.tif</init_from>
+    </image>
+    <image id="texture24_tif" name="texture24_tif">
+      <init_from>texture24.tif</init_from>
+    </image>
+    <image id="texture15_jpg" name="texture15_jpg">
+      <init_from>texture15.jpg</init_from>
+    </image>
+    <image id="texture25_jpg" name="texture25_jpg">
+      <init_from>texture25.jpg</init_from>
+    </image>
+    <image id="texture12_jpg" name="texture12_jpg">
+      <init_from>texture12.jpg</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="material_1-effect">
       <profile_COMMON>
+        <newparam sid="texture12_jpg-surface">
+          <surface type="2D">
+            <init_from>texture12_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture12_jpg-sampler">
+          <sampler2D>
+            <source>texture12_jpg-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -93,7 +137,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
+              <texture texture="texture12_jpg-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -110,6 +154,16 @@
     </effect>
     <effect id="material_26-effect">
       <profile_COMMON>
+        <newparam sid="texture17_jpg-surface">
+          <surface type="2D">
+            <init_from>texture17_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture17_jpg-sampler">
+          <sampler2D>
+            <source>texture17_jpg-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -119,7 +173,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture17_jpg-sampler" texcoord="ID1146"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -136,6 +190,16 @@
     </effect>
     <effect id="material_27-effect">
       <profile_COMMON>
+        <newparam sid="texture18_tif-surface">
+          <surface type="2D">
+            <init_from>texture18_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture18_tif-sampler">
+          <sampler2D>
+            <source>texture18_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -145,7 +209,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture18_tif-sampler" texcoord="ID1159"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -162,6 +226,16 @@
     </effect>
     <effect id="material_28-effect">
       <profile_COMMON>
+        <newparam sid="texture19_tif-surface">
+          <surface type="2D">
+            <init_from>texture19_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture19_tif-sampler">
+          <sampler2D>
+            <source>texture19_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -171,7 +245,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture19_tif-sampler" texcoord="ID1159"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -188,6 +262,16 @@
     </effect>
     <effect id="material_29-effect">
       <profile_COMMON>
+        <newparam sid="texture20_tif-surface">
+          <surface type="2D">
+            <init_from>texture20_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture20_tif-sampler">
+          <sampler2D>
+            <source>texture20_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -197,7 +281,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture20_tif-sampler" texcoord="ID1159"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -214,6 +298,16 @@
     </effect>
     <effect id="material_32-effect">
       <profile_COMMON>
+        <newparam sid="texture23_tif-surface">
+          <surface type="2D">
+            <init_from>texture23_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture23_tif-sampler">
+          <sampler2D>
+            <source>texture23_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -223,7 +317,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture23_tif-sampler" texcoord="ID1182"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -240,6 +334,16 @@
     </effect>
     <effect id="material_30-effect">
       <profile_COMMON>
+        <newparam sid="texture21_tif-surface">
+          <surface type="2D">
+            <init_from>texture21_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture21_tif-sampler">
+          <sampler2D>
+            <source>texture21_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -249,7 +353,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture21_tif-sampler" texcoord="ID1182"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -266,6 +370,16 @@
     </effect>
     <effect id="material_31-effect">
       <profile_COMMON>
+        <newparam sid="texture22_tif-surface">
+          <surface type="2D">
+            <init_from>texture22_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture22_tif-sampler">
+          <sampler2D>
+            <source>texture22_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -275,7 +389,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture22_tif-sampler" texcoord="ID1182"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -292,6 +406,16 @@
     </effect>
     <effect id="material_33-effect">
       <profile_COMMON>
+        <newparam sid="texture24_tif-surface">
+          <surface type="2D">
+            <init_from>texture24_tif</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture24_tif-sampler">
+          <sampler2D>
+            <source>texture24_tif-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -301,7 +425,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture24_tif-sampler" texcoord="ID1205"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -344,6 +468,16 @@
     </effect>
     <effect id="material_34-effect">
       <profile_COMMON>
+        <newparam sid="texture25_jpg-surface">
+          <surface type="2D">
+            <init_from>texture25_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="texture25_jpg-sampler">
+          <sampler2D>
+            <source>texture25_jpg-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -353,7 +487,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="texture25_jpg-sampler" texcoord="ID1232"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -778,7 +912,9 @@
           <instance_geometry url="#ID1131-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_1-material" target="#material_1-material"/>
+                <instance_material symbol="material_1-material" target="#material_1-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -788,7 +924,9 @@
           <instance_geometry url="#ID1137-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_26-material" target="#material_26-material"/>
+                <instance_material symbol="material_26-material" target="#material_26-material">
+                  <bind_vertex_input semantic="ID1146" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -798,9 +936,15 @@
           <instance_geometry url="#ID1150-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_27-material" target="#material_27-material"/>
-                <instance_material symbol="material_28-material" target="#material_28-material"/>
-                <instance_material symbol="material_29-material" target="#material_29-material"/>
+                <instance_material symbol="material_27-material" target="#material_27-material">
+                  <bind_vertex_input semantic="ID1159" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+                <instance_material symbol="material_28-material" target="#material_28-material">
+                  <bind_vertex_input semantic="ID1159" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+                <instance_material symbol="material_29-material" target="#material_29-material">
+                  <bind_vertex_input semantic="ID1159" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -810,9 +954,15 @@
           <instance_geometry url="#ID1173-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_32-material" target="#material_32-material"/>
-                <instance_material symbol="material_30-material" target="#material_30-material"/>
-                <instance_material symbol="material_31-material" target="#material_31-material"/>
+                <instance_material symbol="material_32-material" target="#material_32-material">
+                  <bind_vertex_input semantic="ID1182" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+                <instance_material symbol="material_30-material" target="#material_30-material">
+                  <bind_vertex_input semantic="ID1182" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+                <instance_material symbol="material_31-material" target="#material_31-material">
+                  <bind_vertex_input semantic="ID1182" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -822,7 +972,9 @@
           <instance_geometry url="#ID1196-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_33-material" target="#material_33-material"/>
+                <instance_material symbol="material_33-material" target="#material_33-material">
+                  <bind_vertex_input semantic="ID1205" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -832,7 +984,9 @@
           <instance_geometry url="#ID1209-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_32-material" target="#material_32-material"/>
+                <instance_material symbol="material_32-material" target="#material_32-material">
+                  <bind_vertex_input semantic="ID1213" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
@@ -852,7 +1006,9 @@
           <instance_geometry url="#ID1223-mesh">
             <bind_material>
               <technique_common>
-                <instance_material symbol="material_34-material" target="#material_34-material"/>
+                <instance_material symbol="material_34-material" target="#material_34-material">
+                  <bind_vertex_input semantic="ID1232" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
               </technique_common>
             </bind_material>
           </instance_geometry>
