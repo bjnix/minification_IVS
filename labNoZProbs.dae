@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.70.0 commit date:2014-03-19, commit time:05:02, hash:19e627c</authoring_tool>
     </contributor>
-    <created>2014-04-19T20:27:21</created>
-    <modified>2014-04-19T20:27:21</modified>
+    <created>2014-04-24T11:36:13</created>
+    <modified>2014-04-24T11:36:13</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -167,21 +167,36 @@
     </light>
   </library_lights>
   <library_images>
-    <image id="labNoZProbsFlip_png" name="labNoZProbsFlip_png">
-      <init_from>labNoZProbsFlip.png</init_from>
+    <image id="lab_png" name="lab_png">
+      <init_from>lab.png</init_from>
+    </image>
+    <image id="ceiling_png" name="ceiling_png">
+      <init_from>ceiling.png</init_from>
+    </image>
+    <image id="floor_png" name="floor_png">
+      <init_from>floor.png</init_from>
+    </image>
+    <image id="floor_png_001" name="floor_png_001">
+      <init_from>floor.png</init_from>
+    </image>
+    <image id="ceiling_png_001" name="ceiling_png_001">
+      <init_from>ceiling.png</init_from>
+    </image>
+    <image id="lab_png_001" name="lab_png_001">
+      <init_from>lab.png</init_from>
     </image>
   </library_images>
   <library_effects>
     <effect id="Material-effect">
       <profile_COMMON>
-        <newparam sid="labNoZProbsFlip_png-surface">
+        <newparam sid="lab_png_001-surface">
           <surface type="2D">
-            <init_from>labNoZProbsFlip_png</init_from>
+            <init_from>lab_png_001</init_from>
           </surface>
         </newparam>
-        <newparam sid="labNoZProbsFlip_png-sampler">
+        <newparam sid="lab_png_001-sampler">
           <sampler2D>
-            <source>labNoZProbsFlip_png-surface</source>
+            <source>lab_png_001-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -193,7 +208,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <texture texture="labNoZProbsFlip_png-sampler" texcoord="UVROOM"/>
+              <texture texture="lab_png_001-sampler" texcoord="UVROOM"/>
             </diffuse>
             <index_of_refraction>
               <float sid="index_of_refraction">1</float>
@@ -208,10 +223,100 @@
       </profile_COMMON>
       <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
     </effect>
+    <effect id="Material_001-effect">
+      <profile_COMMON>
+        <newparam sid="ceiling_png_001-surface">
+          <surface type="2D">
+            <init_from>ceiling_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="ceiling_png_001-sampler">
+          <sampler2D>
+            <source>ceiling_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="ceiling_png_001-sampler" texcoord="UVROOM"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="Material_002-effect">
+      <profile_COMMON>
+        <newparam sid="floor_png_001-surface">
+          <surface type="2D">
+            <init_from>floor_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="floor_png_001-sampler">
+          <sampler2D>
+            <source>floor_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="floor_png_001-sampler" texcoord="UVROOM"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
   </library_effects>
   <library_materials>
     <material id="Material-material" name="Material">
       <instance_effect url="#Material-effect"/>
+    </material>
+    <material id="Material_001-material" name="Material_001">
+      <instance_effect url="#Material_001-effect"/>
+    </material>
+    <material id="Material_002-material" name="Material_002">
+      <instance_effect url="#Material_002-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -238,7 +343,7 @@
           </technique_common>
         </source>
         <source id="Cube-mesh-map-0">
-          <float_array id="Cube-mesh-map-0-array" count="168">0.5332434 0.6035558 0.03890967 0.6035557 0.01621335 0.3563597 0.5585494 0.3159328 0.01461333 0.3159329 0.5327678 0.06832903 0.6031754 0.8267595 0.6294803 0.8267595 0.6294803 0.9891564 0.5518619 0.8290132 0.5712451 0.8290132 0.5712451 0.9914099 0.02093923 0.824738 0.5152731 0.824738 0.5152731 0.9871348 0.932307 0.6523596 0.9516901 0.6523596 0.9516901 0.8147564 0.8910619 0.6527359 0.9137582 0.6527359 0.9137582 0.8151327 0.5407754 0.6509424 0.8599716 0.6509424 0.8599716 0.8133393 0.5147487 0.8113628 0.01781338 0.811363 0.01781332 0.6489661 0.9847716 0.9889628 0.6655754 0.9889629 0.6655754 0.826566 0.5595484 0.3563597 0.5595487 0.6035559 0.5332434 0.6035558 0.5332434 0.6035558 0.5332433 0.6229389 0.03890973 0.6229393 0.03890967 0.6035557 0.01621335 0.6035557 0.01621335 0.3563597 0.01621335 0.3563597 0.5595484 0.3563597 0.5332434 0.6035558 0.5332434 0.6035558 0.03890973 0.6229393 0.03890967 0.6035557 0.5327678 0.06832903 0.558549 0.06832891 0.5585494 0.3159328 0.01461333 0.06832897 0.03661543 0.06833809 0.01461333 0.3159329 0.03661543 0.06833809 0.03661334 0.04861313 0.5327235 0.04840975 0.01461333 0.3159329 0.03661543 0.06833809 0.5327678 0.06832903 0.03661543 0.06833809 0.5327235 0.04840975 0.5327678 0.06832903 0.6031754 0.9891564 0.6031754 0.8267595 0.6294803 0.9891564 0.5518619 0.9914099 0.5518619 0.8290132 0.5712451 0.9914099 0.02093923 0.9871348 0.02093923 0.824738 0.5152731 0.9871348 0.932307 0.8147564 0.932307 0.6523596 0.9516901 0.8147564 0.8910619 0.8151327 0.8910619 0.6527359 0.9137582 0.8151327 0.5407754 0.8133393 0.5407754 0.6509424 0.8599716 0.8133393 0.5147486 0.6489661 0.5147487 0.8113628 0.01781332 0.6489661 0.9847716 0.826566 0.9847716 0.9889628 0.6655754 0.826566</float_array>
+          <float_array id="Cube-mesh-map-0-array" count="168">2.913221 0.2387623 2.913223 4.736905 1.090526 4.94343 1.00465 0.07678508 1.004637 6.739624 3.415263 0.3925955 0.8921319 0.83308 0.9002617 0.83308 0.9002618 0.9984558 0.8684771 0.833337 0.8765532 0.833337 0.8765532 0.9985162 0.008379578 0.6503686 0.8382839 0.6503686 0.8382839 0.9903222 0.906354 0.356075 0.9474638 0.356075 0.9474638 0.7678862 0.8636175 0.3551979 0.8954619 0.3551979 0.8954619 0.7689153 0.8563655 0.7780151 0.9492728 0.7780151 0.9492726 0.8298239 0.01610457 0.2974728 0.8449963 0.2974713 0.8449968 0.6351417 0.8610805 0.02628952 0.86108 0.3457023 0.992689 0.3457019 1.090523 -5.9557e-4 2.913223 -6.00815e-4 2.913221 0.2387623 2.913221 0.2387623 3.056143 0.2387628 3.056149 4.736905 2.913223 4.736905 2.913223 4.943428 1.090526 4.94343 1.090526 4.94343 1.090523 -5.9557e-4 2.913221 0.2387623 2.913221 0.2387623 3.056149 4.736905 2.913223 4.736905 3.415263 0.3925955 3.415265 0.07679557 1.00465 0.07678508 3.415251 6.739629 3.415162 6.470119 1.004637 6.739624 3.415162 6.470119 3.607202 6.470147 3.609193 0.3931403 1.004637 6.739624 3.415162 6.470119 3.415263 0.3925955 3.415162 6.470119 3.609193 0.3931403 3.415263 0.3925955 0.8921319 0.9984558 0.8921319 0.83308 0.9002618 0.9984558 0.8684771 0.9985162 0.8684771 0.833337 0.8765532 0.9985162 0.008379578 0.9903222 0.008379578 0.6503686 0.8382839 0.9903222 0.906354 0.7678862 0.906354 0.356075 0.9474638 0.7678862 0.8636175 0.7689153 0.8636175 0.3551979 0.8954619 0.7689153 0.8563655 0.8298239 0.8563655 0.7780151 0.9492726 0.8298239 0.01610499 0.6351431 0.01610457 0.2974728 0.8449968 0.6351417 0.9926897 0.02628916 0.8610805 0.02628952 0.992689 0.3457019</float_array>
           <technique_common>
             <accessor source="#Cube-mesh-map-0-array" count="84" stride="2">
               <param name="S" type="float"/>
@@ -249,12 +354,26 @@
         <vertices id="Cube-mesh-vertices">
           <input semantic="POSITION" source="#Cube-mesh-positions"/>
         </vertices>
-        <polylist material="Material-material" count="28">
+        <polylist material="Material-material" count="16">
           <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
-          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
-          <p>7 0 0 4 0 1 2 0 2 11 1 3 12 1 4 17 1 5 7 2 6 0 2 7 10 2 8 6 3 9 7 3 10 17 3 11 5 4 12 6 4 13 16 4 14 4 5 15 5 5 16 15 5 17 3 6 18 4 6 19 14 6 20 2 7 21 3 7 22 13 7 23 1 8 24 2 8 25 12 8 26 0 9 27 1 9 28 11 9 29 1 10 30 0 10 31 7 10 32 7 11 33 6 11 34 5 11 35 4 12 36 3 12 37 2 12 38 2 13 39 1 13 40 7 13 41 7 14 42 5 14 43 4 14 44 17 15 45 10 15 46 11 15 47 13 16 48 14 16 49 12 16 50 14 17 51 15 17 52 16 17 53 12 18 54 14 18 55 17 18 56 14 19 57 16 19 58 17 19 59 17 20 60 7 20 61 10 20 62 16 21 63 6 21 64 17 21 65 15 22 66 5 22 67 16 22 68 14 23 69 4 23 70 15 23 71 13 24 72 3 24 73 14 24 74 12 25 75 2 25 76 13 25 77 11 26 78 1 26 79 12 26 80 10 27 81 0 27 82 11 27 83</p>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>7 2 6 0 2 7 10 2 8 6 3 9 7 3 10 17 3 11 5 4 12 6 4 13 16 4 14 4 5 15 5 5 16 15 5 17 3 6 18 4 6 19 14 6 20 2 7 21 3 7 22 13 7 23 1 8 24 2 8 25 12 8 26 0 9 27 1 9 28 11 9 29 17 20 60 7 20 61 10 20 62 16 21 63 6 21 64 17 21 65 15 22 66 5 22 67 16 22 68 14 23 69 4 23 70 15 23 71 13 24 72 3 24 73 14 24 74 12 25 75 2 25 76 13 25 77 11 26 78 1 26 79 12 26 80 10 27 81 0 27 82 11 27 83</p>
+        </polylist>
+        <polylist material="Material_001-material" count="6">
+          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 </vcount>
+          <p>11 1 3 12 1 4 17 1 5 17 15 45 10 15 46 11 15 47 13 16 48 14 16 49 12 16 50 14 17 51 15 17 52 16 17 53 12 18 54 14 18 55 17 18 56 14 19 57 16 19 58 17 19 59</p>
+        </polylist>
+        <polylist material="Material_002-material" count="6">
+          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 </vcount>
+          <p>7 0 0 4 0 1 2 0 2 1 10 30 0 10 31 7 10 32 7 11 33 6 11 34 5 11 35 4 12 36 3 12 37 2 12 38 2 13 39 1 13 40 7 13 41 7 14 42 5 14 43 4 14 44</p>
         </polylist>
       </mesh>
     </geometry>
@@ -309,6 +428,12 @@
           <bind_material>
             <technique_common>
               <instance_material symbol="Material-material" target="#Material-material">
+                <bind_vertex_input semantic="UVROOM" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_001-material" target="#Material_001-material">
+                <bind_vertex_input semantic="UVROOM" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_002-material" target="#Material_002-material">
                 <bind_vertex_input semantic="UVROOM" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
