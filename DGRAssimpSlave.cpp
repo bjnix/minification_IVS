@@ -143,7 +143,7 @@ class ModelLoad : public ICallbacks
 
 	bool Init()
 	{
-		Vector3f Pos(0.0f, 1.0f, 0.0f);
+		Vector3f Pos(0.0f, 0.0f, 0.0f);
 		Vector3f Target(0.0f, 0.0f, 1.0f);
 		Vector3f Up(0.0, 1.0f, 0.0f);
 
@@ -217,7 +217,7 @@ class ModelLoad : public ICallbacks
 		Pipeline p;
 		p.Scale(1.f, 1.f, 1.f);
 		p.Rotate(-90.0f, -90.0f, 0.0f);
-		p.WorldPos(2.0f, .4f,8.0f);
+		p.WorldPos(2.0f, 0.0f,8.0f);
 		//p.WorldPos(-110.f, -69.0f, -120.f);
 		p.SetCamera(m_pGameCamera->GetPos(), m_pGameCamera->GetTarget(), m_pGameCamera->GetUp());
 		// p.SetPerspectiveProj(60.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 1.0f, 100.0f);
@@ -226,8 +226,8 @@ class ModelLoad : public ICallbacks
 		fH = tan(60.0f / 360.0 * M_PI) * 1.0;
 		fW = fH * (SCREEN_WIDTH/(float)SCREEN_HEIGHT);
 		//p.SetFrustumProj(-fW, fW, -fH, fH, 1.0, 100);
-
-		p.SetFrustumProj(ortho_left, ortho_right, ortho_bottom, ortho_top, 1.0f, 400.f);
+		float height = 0+1.44;
+		p.SetFrustumProj(ortho_left, ortho_right, ortho_bottom-height, ortho_top-height, 1.0f, 400.f);
 		//		p.SetFrustumProj(-.1, .1, -.1, .1, 0.1f, 500.0f);
 		m_pEffect->SetWVP(p.GetWVPTrans());
 		m_pEffect->SetWorldMatrix(p.GetWorldTrans());

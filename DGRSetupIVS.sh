@@ -33,10 +33,10 @@ ssh bjnix@${IVS_HOSTNAME} mkdir -p $DEST_DIR
 # recursively copy files over.
 #scp -r * "bjnix@${IVS_HOSTNAME}:$DEST_DIR"
 
-rsync -ah -e ssh --exclude={.svn,.git,*README*,CMakeCache.txt,DGRAssimpMaster,DGRAssimpMaster,*~} --checksum --partial --no-whole-file --inplace --progress . ${IVS_HOSTNAME}:$DEST_DIR
-cd ../assimp-lib
+rsync -ah -e ssh --exclude={.svn,.git,*README*,CMakeCache.txt,DGRAssimpMaster,DGRAssimpSlave,*~} --checksum --partial --no-whole-file --inplace --progress . ${IVS_HOSTNAME}:$DEST_DIR
+#cd ../assimp-lib
 #rsync -ah -e ssh --exclude={.svn,.git,*README*,CMakeCache.txt} --checksum --partial --no-whole-file --inplace --progress . ${IVS_HOSTNAME}:$DEST_ASSIMP_DIR
-cd -
+#cd -
 #build assimp
 
 #ssh bjnix@${IVS_HOSTNAME} "cd ${DEST_ASSIMP_DIR} && rm -f CMakeCache.txt && /export/apps/src/cmake/2.8.9/cmake-2.8.9/bin/cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_STATIC_LIB=ON -DASSIMP_ENABLE_BOOST_WORKAROUND=ON -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ."
