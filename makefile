@@ -28,7 +28,7 @@ MAGICK_INC=-I/usr/include/ImageMagick
 MAGICK_LIB=-lMagick++
 
 ALL_INC=${GLEW_INC} ${ASSIMP_INC} ${MAGICK_INC}
-ALL_LIB=${GLEW_LIB} ${ASSIMP_LIB} ${MAGICK_LIB} ${VICON_LIB}-lglut -lX11 -lGL -lGLU -lstdc++ -lc -pthread -L/opt/intel/fce/COMPILER_VERSION/lib
+ALL_LIB=${GLEW_LIB} ${ASSIMP_LIB} ${MAGICK_LIB} ${VICON_LIB} -lglut -lX11 -lGL -lGLU -lstdc++ -lc -pthread -L/opt/intel/fce/COMPILER_VERSION/lib
 
 all: $(MASEXEC) $(SLVEXEC)
 
